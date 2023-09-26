@@ -1,9 +1,17 @@
-import { Box } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
+import PrimaryAppBar from "./templates/PrimaryAppBar";
+import Main from "./templates/Main";
 
 const Home = () => {
 
     return (
-        <Box>Home</Box>
+        <Box
+            sx={{ dissplay: "flex" }}
+        >
+            <CssBaseline />
+            <PrimaryAppBar/>
+            <Main/>
+        </Box>
     );
 
 
