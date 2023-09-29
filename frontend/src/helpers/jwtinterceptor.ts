@@ -18,6 +18,7 @@ const useAxiosWithInterceptor = (): AxiosInstance => {
             const goRoot = () => navigate("/")
             goRoot();
         }
+        throw error;
 
     }
     )
