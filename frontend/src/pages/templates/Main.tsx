@@ -1,24 +1,25 @@
-import { Box, Typography } from "@mui/material";
-
-
+import { Box } from "@mui/material";
 import axios from "axios";
+import { ReactNode } from "react";
 
-const Main = () => {
+type Props = {
+    children: ReactNode;
+};
+
+const Main: React.FC<Props> = ({ children }) => {
+
+
     axios.get("http://127.0.0.1:8000/products/all-products")
-    .then((response) => {
-        console.log(response.data);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+        .then((response) => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 
     return <Box sx={{ flexGrow: 1, }}>
 
-        {[...Array(50)].map((_, i) => (
-            <Typography key={i} paragraph>
-                {i + 1}
-            </Typography>
-        ))}
+        {children}
 
     </Box>;
 };
